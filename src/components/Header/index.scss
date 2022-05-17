@@ -1,0 +1,132 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/globals';
+@import '../../scss/animations';
+
+
+
+.header{
+    position: relative;
+    z-index: 1;
+
+    .overlay{  
+        opacity: 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-image: linear-gradient($darkBlue, transparent);
+    }
+
+    //hamburger open 
+    &.open{
+        .header__mobile-menu{
+            > span:first-child{
+                transform: rotate(42deg);   
+            }
+    
+            > span:nth-child(2){
+                opacity: 0;
+            }
+    
+            > span:last-child{
+                transform: rotate(-42deg);   
+            }
+        }       
+    }
+
+    nav{
+        position: relative;
+        background-color: $White;
+        padding-top: 1.0625rem;
+        padding-bottom: 1.0625rem;
+    }
+    
+    &__logo{
+
+        img{
+            margin: 2px 2px 0 px 2px;
+            width: 8.8125rem;
+            height: 1.375rem;
+        }
+
+    }
+
+    &__mobile-menu{//creates hamburger menu
+        > span{
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color: $darkBlue;
+            transition: all .3s ease-in-out;
+            transform-origin: 3.8px 1.4px;
+
+            &:not(:last-child){
+                margin-bottom: 4px;
+            }
+        }       
+    }
+
+    &__nav-links{
+        a{
+            position: relative;
+            font-size: $small-font;
+            color: $GrayishBlue;
+            transition: color .3s ease-in-out;
+
+            &:not(:last-child){
+                margin-right: 32px;
+            }
+            
+            &::before{//color tab for nav links(hover)
+                content: "";
+                display: block;
+                position: absolute;
+                height: 4px;
+                border-radius: 30px;
+                left: 0;
+                right: 0;
+                bottom: -30px;
+                background: linear-gradient(to right, $LimeGreen, $BrightCyan);
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+
+            }
+
+            &:hover{
+                color: $darkBlue;
+                &::before{
+                    opacity: 1;
+                }
+            }         
+        }
+    }
+    
+
+    &__dropdown{
+        position: absolute;
+        width: calc(100% - 3rem);
+        left: 50%;
+        transform: translateX(-50%);
+        background: $White;
+        padding: 1.625rem;
+        margin-top: 1.5rem ;
+        
+        border-radius: 5px;
+
+        a{
+            display: block;
+            padding: .625rem;
+            text-align: center;
+            color: $darkBlue;
+            transition: all .3s ease-in-out;
+
+            &:hover{
+                font-size: 1.09em;
+            }
+        }
+    }
+}
+
+

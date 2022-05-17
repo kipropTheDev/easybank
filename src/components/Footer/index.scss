@@ -1,0 +1,134 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/globals';
+@import '../../scss/animations';
+
+
+.footer{
+    
+    background-color: $darkBlue;
+    color: $White;
+    // padding: 2.5rem;
+    text-align: center;
+
+    .container{
+        @include breakpoint-up(large){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) 2fr;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas: 
+                "logo links1 links2 cta"
+                "social links1 links2 cta";
+                justify-items: start;
+        }
+    }
+
+    a{
+        color: $White;
+    }
+
+    &__logo{
+        display: inline-block;
+        @include breakpoint-down(medium){
+            margin-bottom: 1.875rem;
+
+        }
+
+        @include breakpoint-up(large){
+            grid-area: logo;
+        }
+        
+    }
+
+    &__social{
+        
+
+        @include breakpoint-down(medium){
+            margin-bottom: 1.875rem;
+
+        }
+
+        @include breakpoint-up(large){
+            margin-top: 20px;
+            grid-area: social;
+            
+        }
+        a{
+            display: inline-block;
+
+            svg path{
+                transition: fill .3s ease-in-out;
+            }
+
+            &:hover svg path {
+                fill: $LimeGreen;
+            }
+
+        }
+        a:not(:last-child){
+            margin-right: 1rem;
+            @include breakpoint-up(large){
+                margin-right: .4rem;
+            }
+        }
+    }
+
+    &__links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        a{
+            transition: all .3s ease-in-out;
+            &:hover{
+                color: $LimeGreen;
+            }
+        }
+        
+        
+
+        @include breakpoint-down(medium){
+            line-height: 2;
+        }
+
+        @include breakpoint-up(large){
+            align-items: start;
+            font-size: .9rem;
+
+        }
+
+        &.col1{
+            @include breakpoint-up(large){
+                grid-area: links1;
+            }
+        }
+
+        &.col2{
+            @include breakpoint-down(medium){
+                margin-bottom: 1.875rem;
+    
+            }
+            @include breakpoint-up(large){
+                grid-area: links2;
+            }
+        }
+
+    }
+
+    &__cta{
+
+        @include breakpoint-up(large){
+            grid-area: cta;
+            text-align: right;
+            justify-self: end;
+        }
+       a.button{
+        margin-bottom: 1.875rem;
+       }
+    }
+
+    &__copyright{
+        font-size: .8125rem;
+        color: $GrayishBlue;
+    }
+}

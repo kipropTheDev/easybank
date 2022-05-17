@@ -1,0 +1,158 @@
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+h1, h2, h3{
+    margin-top: 0;
+    font-weight: 400;
+    line-height: 1.15;
+    color: $darkBlue;
+}
+
+h1{
+            
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 1.15;
+    color: $darkBlue;
+    margin-bottom: 1.5rem;
+
+    @include breakpoint-up(large){
+        font-size: $xl-font;
+    }
+}
+
+h2{
+    font-size: 1.875rem;
+    margin-bottom: 1.5625rem;
+
+    @include breakpoint-up(large){
+        font-size: 2.25rem;
+        margin-bottom: 2.25rem;
+    }
+}
+
+p{
+    margin: 0;
+    line-height: 1.5;
+    margin-bottom: 2.25rem;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+    font-size: $med-font;
+    color: $GrayishBlue;
+    font-weight: 300;
+    font-family: 'Public Sans', sans-serif;
+    overflow-x: hidden;
+
+    @include breakpoint-up(large){
+        font-size: $med-font;
+        letter-spacing: .5px;
+    }
+
+    &.noscroll{
+        overflow: hidden;
+    }
+}
+a, a:visited, a:hover{
+    text-decoration: none;
+    
+}
+
+//container class
+.container{
+    max-width: 69.375rem;
+    margin: 0 auto;
+
+
+    &--pall{
+        padding-top: 2.25rem;
+        padding-right: 1.5rem;
+        padding-bottom: 2.25rem;
+        padding-left: 1.5rem;
+    }
+
+    &--py{
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+    }
+    &--px{
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    &--pt{
+        padding-top: 2.25rem;
+    }
+
+    &--pr{
+        padding-right: 1.5rem;
+    }
+
+    &--pb{
+        padding-bottom: 2.25rem;
+    }
+
+    &--pl{
+        padding-left: 1.5rem;
+    }
+}
+
+//flexboxes
+.flex{
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-jc-c{
+        justify-content: center;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+//buttons
+button, .button{
+    padding: 0.875rem 2.1875rem;
+    background: linear-gradient(to right, $LimeGreen, $BrightCyan);
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    color: $White;
+    font-weight: 400;
+    font-size: $small-font;
+    display: inline-block;
+    transition: opacity .3s ease-in-out;
+
+        &:hover{
+            opacity: 0.75;
+        }
+}
+
+//visibility
+
+.hide-for-mobile{//hides for mobile & tab
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.hide-for-desktop{//hides for desktop
+    @include breakpoint-up(large){
+        display: none;
+    }
+
+}
+
