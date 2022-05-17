@@ -31,6 +31,7 @@ Users should be able to:
 - using css properties like flex and grid
 - Using Git as well as learing how to publish a static website
 - Using Sass to write better css
+- Resposnive design
 
 
 ## Author
