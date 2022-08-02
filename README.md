@@ -1,7 +1,7 @@
 # Frontend Mentor - Easybank landing page solution
 
 This is a solution to the [Easybank landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
-[Click here to see my solution](https://90834e96.easybank-3qg.pages.dev/)
+[Click here to see my solution](https://90834e96.easybank-3qg.pages.dev/).
 
 ### The challenge
 
@@ -14,6 +14,7 @@ Users should be able to:
 
 - mobile first approach
 - creating resuable components for faster development with React
+
 
 ### Built with
 
